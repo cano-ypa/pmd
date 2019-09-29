@@ -16,6 +16,10 @@ class Ripple {
     animationEnd: (e: AnimationEvent) => this.animationEnd(e)
   };
 
+  private isAnimationEnd: Boolean = false;
+  private isPointerUp: Boolean = false;
+  private isPointerOut: Boolean = false;
+
   constructor(node: HTMLElement) {
     this.node = node;
 
