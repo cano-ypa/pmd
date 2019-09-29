@@ -69,7 +69,10 @@ class Ripple {
     if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
   }
 
-  pointerOut(): void {}
+  pointerOut(): void {
+    this.isPointerOut = true;
+    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
+  }
 
   animationEnd(e: AnimationEvent): void {}
 }
