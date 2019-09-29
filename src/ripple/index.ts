@@ -34,7 +34,27 @@ class Ripple {
     this.node.addEventListener('animationend', this.eventHandler.animationEnd, { passive: true });
   }
 
-  rippleStart(e: PointerEvent): void {}
+  rippleStart(event: PointerEvent): void {
+    this.ripple.classList.remove('activate');
+    this.ripple.classList.remove('deactivate');
+
+    this.isAnimationEnd = false;
+    this.isPointerUp = false;
+    this.isPointerOut = false;
+
+    const nodeRect = this.node.getBoundingClientRect();
+    const isUnbounded = this.node.classList.contains('pmd-ripple--unbounded');
+
+    const rippleSize = Math.sqrt(Math.pow(nodeRect.width, 2) + Math.pow(nodeRect.height, 2));
+    const offsetX: number = isUnbounded ? this.node.offsetWidth / 2 : event.offsetX;
+    const offsetY: number = isUnbounded ? this.node.offsetHeight / 2 : event.offsetY;
+
+    this.ripple.style.setProperty('--size', `${rippleSize}px`);
+    this.ripple.style.setProperty('--start-pos', `${offsetX - rippleSize / 2}px,${offsetY - rippleSize / 2}px`);
+    this.ripple.style.setProperty('--end-pos', `${(this.node.offsetWidth - rippleSize) / 2}px,${(this.node.offsetHeight - rippleSize) / 2}px`);
+
+    this.ripple.classList.add('activate');
+  }
 
   rippleEnd(): void {}
 
