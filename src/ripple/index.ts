@@ -74,7 +74,15 @@ class Ripple {
     if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
   }
 
-  animationEnd(e: AnimationEvent): void {}
+  animationEnd(e: AnimationEvent): void {
+    if (e.animationName === 'pmd-ripple-in') {
+      this.isAnimationEnd = true;
+      if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
+    } else if (e.animationName === 'pmd-ripple-out') {
+      this.ripple.classList.remove('activate');
+      this.ripple.classList.remove('deactivate');
+    }
+  }
 }
 
 export { Ripple };
