@@ -64,7 +64,10 @@ class Ripple {
     this.ripple.classList.add('deactivate');
   }
 
-  pointerUp(): void {}
+  pointerUp(): void {
+    this.isPointerUp = true;
+    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
+  }
 
   pointerOut(): void {}
 
