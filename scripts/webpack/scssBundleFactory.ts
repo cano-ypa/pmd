@@ -15,7 +15,7 @@ class TsBundleFactory implements BundleFactory {
         rules: [
           {
             test: /\.scss$/,
-            use: ['scss-loader']
+            use: ['file-loader', 'extract-loader', 'css-loader', 'sass-loader']
           }
         ]
       },
