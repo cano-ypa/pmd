@@ -1,8 +1,8 @@
-import BundleFactoryBase from './bundleFactoryBase';
+import BundleFactory from './bundleFactory';
 import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
 
-class TsBundleFactory extends BundleFactoryBase {
+class TsBundleFactory implements BundleFactory {
   private createScssCommonConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
     return {
       mode: 'production',
@@ -26,14 +26,14 @@ class TsBundleFactory extends BundleFactoryBase {
     };
   }
 
-  public createCombinedConfig(): webpack.Configuration {
+  public createCombined(): webpack.Configuration {
     const output = pathResolver.get('./build/Combined');
     const chunks = pathResolver.getFromSrc('./pedeal-material/index.scss');
 
     return this.createScssCommonConfig({ output, chunks });
   }
 
-  public createALaCarteConfig(): webpack.Configuration {
+  public createALaCarte(): webpack.Configuration {
     const output = pathResolver.get('./build/ALaCarte');
     const chunks = {
       ripple: pathResolver.getFromSrc('./ripple/index.scss')
