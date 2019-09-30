@@ -3,7 +3,7 @@ import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
 
 class TsBundleFactory implements BundleFactory {
-  private createScssCommonConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
+  private createConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
     return {
       mode: 'production',
 
@@ -30,7 +30,7 @@ class TsBundleFactory implements BundleFactory {
     const output = pathResolver.get('./build/Combined');
     const chunks = pathResolver.getFromSrc('./pedeal-material/index.scss');
 
-    return this.createScssCommonConfig({ output, chunks });
+    return this.createConfig({ output, chunks });
   }
 
   public createALaCarte(): webpack.Configuration {
@@ -39,7 +39,7 @@ class TsBundleFactory implements BundleFactory {
       ripple: pathResolver.getFromSrc('./ripple/index.scss')
     };
 
-    return this.createScssCommonConfig({ output, chunks });
+    return this.createConfig({ output, chunks });
   }
 }
 
