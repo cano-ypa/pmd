@@ -7,7 +7,7 @@ class TsBundleFactory extends BundleFactory {
     return {
       mode: 'production',
 
-      output: { filename: '[name]', path: output },
+      output: { filename: '[name].js', path: output },
 
       entry: chunks,
 
