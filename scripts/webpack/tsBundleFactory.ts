@@ -7,7 +7,7 @@ class TsBundleFactory extends BundleFactory {
     return {
       mode: 'production',
 
-      output: { filename: '[name].js', path: output },
+      output: { filename: '[name].js', path: output, library: 'pedeal', libraryTarget: 'umd' },
 
       entry: chunks,
 
