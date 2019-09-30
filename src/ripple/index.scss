@@ -9,8 +9,8 @@
   top: 0;
   left: 0;
   opacity: 0;
-  width: var(--pmd-ripple-size, 0);
-  height: var(--pmd-ripple-size, 0);
+  width: var(--size, 0);
+  height: var(--size, 0);
   border-radius: 50%;
   transform: scale(0);
   transform-origin: center center;
@@ -29,22 +29,22 @@
 
 @keyframes pmd-ripple-in {
   from {
-    transform: translate(var(--pmd-ripple-start, 0)) scale(0);
+    transform: translate(var(--start-pos, 0)) scale(0);
     opacity: 0;
   }
   to {
-    transform: translate(var(--pmd-ripple-end, 0)) scale(1);
+    transform: translate(var(--end-pos, 0)) scale(1);
     opacity: 0.4;
   }
 }
 
 @keyframes pmd-ripple-out {
   from {
-    transform: translate(var(--pmd-ripple-end, 0)) scale(1);
+    transform: translate(var(--end-pos, 0)) scale(1);
     opacity: 0.4;
   }
   to {
-    transform: translate(var(--pmd-ripple-end, 0)) scale(1);
+    transform: translate(var(--end-pos, 0)) scale(1);
     opacity: 0;
   }
 }
