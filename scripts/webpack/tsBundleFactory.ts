@@ -28,16 +28,16 @@ class TsBundleFactory extends BundleFactory {
   }
 
   public createCombinedConfig(): webpack.Configuration {
-    const output = path.resolve(__dirname, './build/Combined');
-    const chunks = path.resolve(__dirname, './src/pedeal-material/index.ts');
+    const output = path.resolve('./build/Combined');
+    const chunks = path.resolve('./src/pedeal-material/index.ts');
 
     return this.createTsCommonConfig({ output, chunks });
   }
 
   public createALaCarteConfig(): webpack.Configuration {
-    const output = path.resolve(__dirname, './build/ALaCarte');
+    const output = path.resolve('./build/ALaCarte');
     const chunks = {
-      ripple: path.resolve(__dirname, './src/ripple/index.ts')
+      ripple: path.resolve('./src/ripple/index.ts')
     };
 
     return this.createTsCommonConfig({ output, chunks });
