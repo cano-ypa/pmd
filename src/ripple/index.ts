@@ -10,10 +10,10 @@ class Ripple {
   private ripple: HTMLDivElement;
 
   private eventHandler: RippleEventHandler = {
-    pointerDown: (e: PointerEvent) => this.rippleStart(e),
+    pointerDown: (event: PointerEvent) => this.rippleStart(event),
     pointerUp: () => this.pointerUp(),
     pointerOut: () => this.pointerOut(),
-    animationEnd: (e: AnimationEvent) => this.animationEnd(e)
+    animationEnd: (event: AnimationEvent) => this.animationEnd(event)
   };
 
   private isAnimationEnd: Boolean = false;
