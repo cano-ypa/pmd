@@ -1,8 +1,8 @@
-import BundleFactory from './bundleFactory';
+import BundleFactoryBase from './bundleFactoryBase';
 import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
 
-class TsBundleFactory extends BundleFactory {
+class TsBundleFactory extends BundleFactoryBase {
   private createTsCommonConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
     return {
       mode: 'production',

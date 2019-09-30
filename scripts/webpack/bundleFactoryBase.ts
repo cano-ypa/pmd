@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 
-abstract class BundleFactory {
+abstract class BundleFactoryBase {
   public createCombined(): webpack.Configuration {
     return this.createCombinedConfig();
   }
@@ -14,4 +14,4 @@ abstract class BundleFactory {
   abstract createALaCarteConfig(): webpack.Configuration;
 }
 
-export default BundleFactory;
+export default BundleFactoryBase;
