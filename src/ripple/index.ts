@@ -1,8 +1,8 @@
 interface RippleEventHandler {
-  pointerDown: EventListener;
-  pointerUp: EventListener;
-  pointerOut: EventListener;
-  animationEnd: EventListener;
+  pointerDown: (event: PointerEvent) => void;
+  pointerUp: () => void;
+  pointerOut: () => void;
+  animationEnd: (event: AnimationEvent) => void;
 }
 
 class Ripple {
