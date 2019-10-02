@@ -20,7 +20,7 @@ class Ripple {
     this.node.addEventListener('animationend', (event: AnimationEvent) => this.animationEnd(event), { passive: true });
   }
 
-  rippleStart(event: PointerEvent): void {
+  private rippleStart(event: PointerEvent): void {
     this.ripple.classList.remove('activate');
     this.ripple.classList.remove('deactivate');
 
@@ -42,7 +42,7 @@ class Ripple {
     this.ripple.classList.add('activate');
   }
 
-  rippleEnd(): void {
+  private rippleEnd(): void {
     this.isAnimationEnd = false;
     this.isPointerUp = false;
     this.isPointerOut = false;
@@ -50,21 +50,21 @@ class Ripple {
     this.ripple.classList.add('deactivate');
   }
 
-  checkRippleEnd() {
+  private checkRippleEnd() {
     if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
   }
 
-  pointerUp(): void {
+  private pointerUp(): void {
     this.isPointerUp = true;
     this.checkRippleEnd();
   }
 
-  pointerOut(): void {
+  private pointerOut(): void {
     this.isPointerOut = true;
     this.checkRippleEnd();
   }
 
-  animationEnd(e: AnimationEvent): void {
+  private animationEnd(e: AnimationEvent): void {
     if (e.animationName === 'pmd-ripple-in') {
       this.isAnimationEnd = true;
       this.checkRippleEnd();
