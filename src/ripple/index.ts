@@ -1,20 +1,6 @@
-interface RippleEventHandler {
-  pointerDown: (event: PointerEvent) => void;
-  pointerUp: () => void;
-  pointerOut: () => void;
-  animationEnd: (event: AnimationEvent) => void;
-}
-
 class Ripple {
   private node: HTMLElement;
   private ripple: HTMLDivElement;
-
-  private eventHandler: RippleEventHandler = {
-    pointerDown: (event: PointerEvent) => this.rippleStart(event),
-    pointerUp: () => this.pointerUp(),
-    pointerOut: () => this.pointerOut(),
-    animationEnd: (event: AnimationEvent) => this.animationEnd(event)
-  };
 
   private isAnimationEnd: Boolean = false;
   private isPointerUp: Boolean = false;
@@ -28,10 +14,10 @@ class Ripple {
 
     this.node.appendChild(this.ripple);
 
-    this.node.addEventListener('pointerdown', this.eventHandler.pointerDown, { passive: true });
-    this.node.addEventListener('pointerup', this.eventHandler.pointerUp, { passive: true });
-    this.node.addEventListener('pointerout', this.eventHandler.pointerOut, { passive: true });
-    this.node.addEventListener('animationend', this.eventHandler.animationEnd, { passive: true });
+    this.node.addEventListener('pointerdown', (event: PointerEvent) => this.rippleStart(event), { passive: true });
+    this.node.addEventListener('pointerup', () => this.pointerUp(), { passive: true });
+    this.node.addEventListener('pointerout', () => this.pointerOut(), { passive: true });
+    this.node.addEventListener('animationend', (event: AnimationEvent) => this.animationEnd(event), { passive: true });
   }
 
   rippleStart(event: PointerEvent): void {
