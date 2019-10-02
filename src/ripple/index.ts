@@ -42,16 +42,16 @@ class Ripple {
     this.ripple.classList.add('activate');
   }
 
-  chenkRippleEnd() {
-    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
-  }
-
   rippleEnd(): void {
     this.isAnimationEnd = false;
     this.isPointerUp = false;
     this.isPointerOut = false;
 
     this.ripple.classList.add('deactivate');
+  }
+
+  chenkRippleEnd() {
+    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
   }
 
   pointerUp(): void {
