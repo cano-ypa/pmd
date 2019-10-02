@@ -50,24 +50,24 @@ class Ripple {
     this.ripple.classList.add('deactivate');
   }
 
-  chenkRippleEnd() {
+  checkRippleEnd() {
     if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
   }
 
   pointerUp(): void {
     this.isPointerUp = true;
-    this.chenkRippleEnd();
+    this.checkRippleEnd();
   }
 
   pointerOut(): void {
     this.isPointerOut = true;
-    this.chenkRippleEnd();
+    this.checkRippleEnd();
   }
 
   animationEnd(e: AnimationEvent): void {
     if (e.animationName === 'pmd-ripple-in') {
       this.isAnimationEnd = true;
-      this.chenkRippleEnd();
+      this.checkRippleEnd();
     } else if (e.animationName === 'pmd-ripple-out') {
       this.ripple.classList.remove('activate');
       this.ripple.classList.remove('deactivate');
