@@ -18,11 +18,11 @@
 
   background-color: #bdbdbd;
 
-  .activate {
+  &.activate {
     animation: pmd-ripple-in 0.32s cubic-bezier(0.1, 0.64, 0.4, 1) forwards;
   }
 
-  .deactivate {
+  &.deactivate {
     animation: pmd-ripple-out 0.3s ease-out;
   }
 }
