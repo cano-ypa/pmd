@@ -1,13 +1,14 @@
 import BundleFactory from './bundleFactory';
 import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 class TsBundleFactory implements BundleFactory {
   private createConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
     return {
       mode: 'production',
 
-      output: { filename: '[name].css', path: output },
+      output: { path: output },
 
       entry: chunks,
 
@@ -15,14 +16,14 @@ class TsBundleFactory implements BundleFactory {
         rules: [
           {
             test: /\.scss$/,
-            use: ['file-loader', 'extract-loader', 'css-loader', 'sass-loader']
+            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
           }
         ]
       },
 
-      resolve: { extensions: ['.scss'] },
+      plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
 
-      devtool: 'source-map'
+      resolve: { extensions: ['.scss'] }
     };
   }
 
