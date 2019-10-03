@@ -8,7 +8,10 @@ class TsBundleFactory implements BundleFactory {
     return {
       mode: 'production',
 
-      output: { path: output },
+      output: {
+        filename: 'none', // css の出力が js ファイルを上書きするのを防止する (css ファイルは MiniCssExtractPlugin が出力)
+        path: output
+      },
 
       entry: chunks,
 
