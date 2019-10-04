@@ -1,6 +1,10 @@
+import { RippleEventListener } from './type';
+
 class Ripple {
   private node: HTMLElement;
   private ripple: HTMLDivElement;
+
+  private listener: RippleEventListener;
 
   private isAnimationEnd: Boolean = false;
   private isPointerUp: Boolean = false;
@@ -9,15 +13,22 @@ class Ripple {
   constructor(node: HTMLElement) {
     this.node = node;
 
+    this.listener = {
+      pointerDown: (event: PointerEvent) => this.activate(event),
+      pointerUp: () => this.pointerUp(),
+      pointerOut: () => this.pointerOut(),
+      animationEnd: (event: AnimationEvent) => this.animationEnd(event)
+    };
+
     this.ripple = document.createElement('div');
     this.ripple.classList.add('pmd-ripple-x');
 
     this.node.appendChild(this.ripple);
 
-    this.node.addEventListener('pointerdown', (event: PointerEvent) => this.activate(event), { passive: true });
-    this.node.addEventListener('pointerup', () => this.pointerUp(), { passive: true });
-    this.node.addEventListener('pointerout', () => this.pointerOut(), { passive: true });
-    this.node.addEventListener('animationend', (event: AnimationEvent) => this.animationEnd(event), { passive: true });
+    this.node.addEventListener('pointerdown', this.listener.pointerDown, { passive: true });
+    this.node.addEventListener('pointerup', this.listener.pointerUp, { passive: true });
+    this.node.addEventListener('pointerout', this.listener.pointerOut, { passive: true });
+    this.node.addEventListener('animationend', this.listener.animationEnd, { passive: true });
   }
 
   private activate(event: PointerEvent): void {
