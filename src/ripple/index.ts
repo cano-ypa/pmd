@@ -6,9 +6,9 @@ class Ripple {
 
   private listener: RippleEventListener;
 
-  private isAnimationEnd: Boolean = false;
-  private isPointerUp: Boolean = false;
-  private isPointerOut: Boolean = false;
+  private isAnimationEnd: boolean = false;
+  private isPointerUp: boolean = false;
+  private isPointerOut: boolean = false;
 
   constructor(node: HTMLElement) {
     this.node = node;
