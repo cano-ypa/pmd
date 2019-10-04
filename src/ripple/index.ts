@@ -14,13 +14,13 @@ class Ripple {
 
     this.node.appendChild(this.ripple);
 
-    this.node.addEventListener('pointerdown', (event: PointerEvent) => this.rippleStart(event), { passive: true });
+    this.node.addEventListener('pointerdown', (event: PointerEvent) => this.activate(event), { passive: true });
     this.node.addEventListener('pointerup', () => this.pointerUp(), { passive: true });
     this.node.addEventListener('pointerout', () => this.pointerOut(), { passive: true });
     this.node.addEventListener('animationend', (event: AnimationEvent) => this.animationEnd(event), { passive: true });
   }
 
-  private rippleStart(event: PointerEvent): void {
+  private activate(event: PointerEvent): void {
     this.ripple.classList.remove('activate');
     this.ripple.classList.remove('deactivate');
 
@@ -42,7 +42,7 @@ class Ripple {
     this.ripple.classList.add('activate');
   }
 
-  private rippleEnd(): void {
+  private deactivate(): void {
     this.isAnimationEnd = false;
     this.isPointerUp = false;
     this.isPointerOut = false;
@@ -51,7 +51,7 @@ class Ripple {
   }
 
   private checkRippleEnd() {
-    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.rippleEnd();
+    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.deactivate();
   }
 
   private pointerUp(): void {
