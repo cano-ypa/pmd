@@ -3,7 +3,7 @@ import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-class TsBundleFactory implements BundleFactory {
+class ScssBundleFactory implements BundleFactory {
   private createConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
     return {
       mode: 'production',
@@ -47,4 +47,4 @@ class TsBundleFactory implements BundleFactory {
   }
 }
 
-export default TsBundleFactory;
+export default ScssBundleFactory;
