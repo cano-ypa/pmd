@@ -3,8 +3,10 @@ import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import { ConfigOpt } from './type';
+
 class ScssBundleFactory implements BundleFactory {
-  private createConfig({ output, chunks }: { output: string; chunks: string | { [s: string]: string } }): webpack.Configuration {
+  private createConfig({ output, chunks }: ConfigOpt): webpack.Configuration {
     return {
       mode: 'production',
 
