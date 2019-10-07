@@ -1,6 +1,6 @@
 import BundleFactory from './bundleFactory';
-import * as webpack from 'webpack';
 import pathResolver from '../util/pathResolver';
+import * as webpack from 'webpack';
 
 import { ConfigOpt } from './type';
 
