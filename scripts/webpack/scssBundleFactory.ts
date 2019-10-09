@@ -42,7 +42,8 @@ class ScssBundleFactory implements BundleFactory {
   public createALaCarte(): webpack.Configuration {
     const output = pathResolver.get('./build/ALaCarte');
     const chunks = {
-      ripple: pathResolver.getFromSrc('./ripple/index.scss')
+      ripple: pathResolver.getFromSrc('./ripple/index.scss'),
+      button: pathResolver.getFromSrc('./button/index.scss')
     };
 
     return this.createConfig({ output, chunks });

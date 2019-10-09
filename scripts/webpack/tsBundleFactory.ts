@@ -39,7 +39,8 @@ class TsBundleFactory implements BundleFactory {
   public createALaCarte(): webpack.Configuration {
     const output = pathResolver.get('./build/ALaCarte');
     const chunks = {
-      ripple: pathResolver.getFromSrc('./ripple/index.ts')
+      ripple: pathResolver.getFromSrc('./ripple/index.ts'),
+      button: pathResolver.getFromSrc('./button/index.ts')
     };
 
     return this.createConfig({ output, chunks });
