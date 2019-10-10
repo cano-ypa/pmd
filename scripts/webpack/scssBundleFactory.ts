@@ -11,7 +11,7 @@ class ScssBundleFactory implements BundleFactory {
       mode: 'production',
 
       output: {
-        filename: '[name].none', // css の出力が js ファイルを上書きするのを防止する (css ファイルは MiniCssExtractPlugin が出力)
+        filename: 'cssavoid/[name].js', // css の出力が js ファイルを上書きするのを防止する (css ファイルは MiniCssExtractPlugin が出力)
         path: output
       },
 
