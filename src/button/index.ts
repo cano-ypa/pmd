@@ -1,5 +1,5 @@
 class Button {
-  node: HTMLElement;
+  private node: HTMLElement;
 
   constructor(element: HTMLElement) {
     this.node = element;
