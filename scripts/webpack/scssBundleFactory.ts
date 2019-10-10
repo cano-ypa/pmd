@@ -43,7 +43,8 @@ class ScssBundleFactory implements BundleFactory {
     const output = pathResolver.get('./build/ALaCarte');
     const chunks = {
       ripple: pathResolver.getFromSrc('./ripple/index.scss'),
-      button: pathResolver.getFromSrc('./button/index.scss')
+      button: pathResolver.getFromSrc('./button/index.scss'),
+      card: pathResolver.getFromSrc('./card/index.scss')
     };
 
     return this.createConfig({ output, chunks });

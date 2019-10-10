@@ -40,7 +40,8 @@ class TsBundleFactory implements BundleFactory {
     const output = pathResolver.get('./build/ALaCarte');
     const chunks = {
       ripple: pathResolver.getFromSrc('./ripple/index.ts'),
-      button: pathResolver.getFromSrc('./button/index.ts')
+      button: pathResolver.getFromSrc('./button/index.ts'),
+      card: pathResolver.getFromSrc('./card/index.ts')
     };
 
     return this.createConfig({ output, chunks });
