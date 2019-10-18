@@ -39,3 +39,10 @@
   margin-left: -4px;
   margin-right: 8px;
 }
+
+.pmd-button:disabled {
+  background-color: #e0e0e0;
+  box-shadow: none;
+  color: #9e9e9e;
+  fill: #9e9e9e;
+}
