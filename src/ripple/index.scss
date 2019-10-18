@@ -19,11 +19,11 @@
   background-color: #bdbdbd;
 
   &.activate {
-    animation: pmd-ripple-in 0.32s cubic-bezier(0.1, 0.64, 0.4, 1) forwards;
+    animation: pmd-ripple-in 0.25s cubic-bezier(0.2, 0.96, 0.8, 1) forwards;
   }
 
   &.deactivate {
-    animation: pmd-ripple-out 0.3s ease-out;
+    animation: pmd-ripple-out 0.3s ease-in-out;
   }
 }
 
