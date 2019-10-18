@@ -49,6 +49,16 @@
   }
 }
 
+.pmd-button-outline {
+  @extend %button-base;
+
+  padding: 0 15px;
+  border: 1px solid #bdbdbd;
+  background-color: transparent;
+  color: #6200ee;
+  fill: #6200ee;
+}
+
 .pmd-button-text {
   @extend %button-base;
 
