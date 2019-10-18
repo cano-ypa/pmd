@@ -20,6 +20,11 @@
     left: 0;
     right: 0;
   }
+
+  &:disabled {
+    color: #9e9e9e;
+    fill: #9e9e9e;
+  }
 }
 
 .pmd-button {
@@ -34,8 +39,6 @@
   &:disabled {
     background-color: #e0e0e0;
     box-shadow: none;
-    color: #9e9e9e;
-    fill: #9e9e9e;
   }
 
   &:hover:not(:disabled)::after {
