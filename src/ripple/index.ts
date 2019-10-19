@@ -45,12 +45,14 @@ class Ripple {
     const isUnbounded = this.node.classList.contains('pmd-ripple--unbounded');
 
     const rippleSize = Math.sqrt(Math.pow(nodeRect.width, 2) + Math.pow(nodeRect.height, 2));
-    const startX: number = isUnbounded ? this.node.offsetWidth / 2 : offsetX;
-    const startY: number = isUnbounded ? this.node.offsetHeight / 2 : offsetY;
+    const positionX = (this.node.offsetWidth - rippleSize) / 2;
+    const positionY = (this.node.offsetHeight - rippleSize) / 2;
+    const startX: number = isUnbounded ? 0 : offsetX;
+    const startY: number = isUnbounded ? 0 : offsetY;
 
     this.ripple.style.setProperty('--size', `${rippleSize}px`);
-    this.ripple.style.setProperty('--start-pos', `${startX - rippleSize / 2}px,${startY - rippleSize / 2}px`);
-    this.ripple.style.setProperty('--end-pos', `${(this.node.offsetWidth - rippleSize) / 2}px,${(this.node.offsetHeight - rippleSize) / 2}px`);
+    this.ripple.style.setProperty('--start-pos', `${positionX + startX}px,${positionY + startY}px`);
+    this.ripple.style.setProperty('--end-pos', `${positionX}px,${positionY}px`);
 
     this.ripple.classList.add('activate');
   }
@@ -68,7 +70,7 @@ class Ripple {
   }
 
   private pointerDown(event: PointerEvent) {
-    this.activate(event.offsetX, event.offsetY);
+    this.activate(event.offsetX - this.node.offsetWidth / 2, event.offsetY - this.node.offsetHeight / 2);
   }
 
   private keyboardDown(event: KeyboardEvent) {
