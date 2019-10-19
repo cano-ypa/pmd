@@ -7,8 +7,8 @@ class Ripple {
   private listener: RippleEventListener;
 
   private isAnimationEnd: boolean = false;
-  private isPointerUp: boolean = false;
-  private isPointerOut: boolean = false;
+  private isPress: boolean = false;
+  private isOver: boolean = false;
 
   constructor(node: HTMLElement) {
     this.node = node;
@@ -38,8 +38,6 @@ class Ripple {
     this.ripple.classList.remove('deactivate');
 
     this.isAnimationEnd = false;
-    this.isPointerUp = false;
-    this.isPointerOut = false;
 
     const nodeRect = this.node.getBoundingClientRect();
     const isUnbounded = this.node.classList.contains('pmd-ripple--unbounded');
@@ -59,17 +57,19 @@ class Ripple {
 
   private deactivate(): void {
     this.isAnimationEnd = false;
-    this.isPointerUp = false;
-    this.isPointerOut = false;
+    this.isPress = false;
+    this.isOver = false;
 
     this.ripple.classList.add('deactivate');
   }
 
   private checkRippleEnd() {
-    if (this.isAnimationEnd && (this.isPointerUp || this.isPointerOut)) this.deactivate();
+    if (this.isAnimationEnd && (!this.isPress || !this.isOver)) this.deactivate();
   }
 
   private pointerDown(event: PointerEvent) {
+    this.isPress = true;
+    this.isOver = true;
     this.activate(event.offsetX - this.node.offsetWidth / 2, event.offsetY - this.node.offsetHeight / 2);
   }
 
@@ -78,12 +78,12 @@ class Ripple {
   }
 
   private pointerUp(): void {
-    this.isPointerUp = true;
+    this.isPress = false;
     this.checkRippleEnd();
   }
 
   private pointerOut(): void {
-    this.isPointerOut = true;
+    this.isOver = false;
     this.checkRippleEnd();
   }
 
