@@ -15,6 +15,7 @@ class Ripple {
 
     this.listener = {
       pointerDown: (event: PointerEvent) => this.pointerDown(event),
+      keyboardDown: (event: KeyboardEvent) => this.keyboardDown(event),
       pointerUp: () => this.pointerUp(),
       pointerOut: () => this.pointerOut(),
       animationEnd: (event: AnimationEvent) => this.animationEnd(event)
@@ -26,6 +27,7 @@ class Ripple {
     this.node.appendChild(this.ripple);
 
     this.node.addEventListener('pointerdown', this.listener.pointerDown, { passive: true });
+    this.node.addEventListener('keydown', this.listener.keyboardDown);
     this.node.addEventListener('pointerup', this.listener.pointerUp, { passive: true });
     this.node.addEventListener('pointerout', this.listener.pointerOut, { passive: true });
     this.node.addEventListener('animationend', this.listener.animationEnd, { passive: true });
@@ -67,6 +69,12 @@ class Ripple {
 
   private pointerDown(event: PointerEvent) {
     this.activate(event.offsetX, event.offsetY);
+  }
+
+  private keyboardDown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.activate(0, 0);
+    }
   }
 
   private pointerUp(): void {
