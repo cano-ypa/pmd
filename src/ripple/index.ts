@@ -74,9 +74,7 @@ class Ripple {
   }
 
   private keyboardDown(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      this.activate(0, 0);
-    }
+    if (event.key === 'Enter') this.activate(0, 0);
   }
 
   private pointerUp(): void {
