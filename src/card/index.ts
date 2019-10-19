@@ -3,6 +3,7 @@ class Card {
 
   constructor(element: HTMLElement) {
     this.node = element;
+    console.log(this.node);
   }
 }
 

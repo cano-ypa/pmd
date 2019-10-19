@@ -6,3 +6,5 @@ class Button {
     console.log(this.node);
   }
 }
+
+export default Button;
