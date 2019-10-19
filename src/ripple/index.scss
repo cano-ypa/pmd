@@ -34,14 +34,14 @@
   }
   to {
     transform: translate(var(--end-pos, 0)) scale(1);
-    opacity: 0.4;
+    opacity: 0.32;
   }
 }
 
 @keyframes pmd-ripple-out {
   from {
     transform: translate(var(--end-pos, 0)) scale(1);
-    opacity: 0.4;
+    opacity: 0.32;
   }
   to {
     transform: translate(var(--end-pos, 0)) scale(1);
