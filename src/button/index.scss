@@ -82,3 +82,28 @@
   margin-left: -4px;
   margin-right: 8px;
 }
+
+.pmd-button-toggle {
+  display: inline-flex;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+}
+.pmd-button-toggle-item {
+  @extend %button-base;
+
+  border-right: 1px solid #e0e0e0;
+  border-radius: 0;
+
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background-color: transparent;
+}
+.pmd-button-toggle-item:last-child {
+  border: none;
+}
+.pmd-button-toggle-item .pmd-button-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
