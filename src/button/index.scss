@@ -67,6 +67,16 @@
   background-color: transparent;
   color: #6200ee;
   fill: #6200ee;
+
+  &:hover:not(:disabled)::after {
+    background-color: #000;
+    opacity: 0.04;
+  }
+
+  &:focus:not(:disabled)::after {
+    background-color: #000;
+    opacity: 0.12;
+  }
 }
 
 .pmd-button-text {
@@ -77,6 +87,16 @@
   background-color: transparent;
   color: #6200ee;
   fill: #6200ee;
+
+  &:hover:not(:disabled)::after {
+    background-color: #000;
+    opacity: 0.04;
+  }
+
+  &:focus:not(:disabled)::after {
+    background-color: #000;
+    opacity: 0.12;
+  }
 }
 
 .pmd-button-icon {
