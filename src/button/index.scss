@@ -46,7 +46,7 @@
 
   --pmd-button-background-color: #6200ee;
   --pmd-button-color: #fff;
-  --pmd-button-states-color: white;
+  --pmd-button-states-color: #fff;
 
   padding: 0 16px;
   min-width: 64px;
@@ -94,7 +94,7 @@
 .pmd-button-toggle {
   display: inline-flex;
   border: 1px solid #e0e0e0;
-  background-color: white;
+  background-color: #fff;
 }
 .pmd-button-toggle-item {
   @extend %button-base;
