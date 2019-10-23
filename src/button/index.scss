@@ -99,6 +99,9 @@
 .pmd-button-toggle-item {
   @extend %button-base;
 
+  --pmd-button-color: #000;
+  --pmd-button-states-color: #808080;
+
   box-sizing: content-box;
   border-right: 1px solid #e0e0e0;
   border-radius: 0;
