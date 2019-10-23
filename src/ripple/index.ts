@@ -34,6 +34,8 @@ class Ripple {
   }
 
   private activate(offsetX: number = 0, offsetY: number = 0): void {
+    if (this.node.getAttribute('disabled') !== null) return;
+
     this.ripple.classList.remove('activate');
     this.ripple.classList.remove('deactivate');
 
