@@ -46,11 +46,11 @@ class Ripple {
     const rippleSize = Math.sqrt(Math.pow(nodeRect.width, 2) + Math.pow(nodeRect.height, 2));
     const positionX = (this.node.offsetWidth - rippleSize) / 2;
     const positionY = (this.node.offsetHeight - rippleSize) / 2;
-    const startX: number = this.isUnbounded() ? 0 : offsetX;
-    const startY: number = this.isUnbounded() ? 0 : offsetY;
+    const startX: number = positionX + (this.isUnbounded() ? 0 : offsetX);
+    const startY: number = positionY + (this.isUnbounded() ? 0 : offsetY);
 
     this.ripple.style.setProperty('--size', `${rippleSize}px`);
-    this.ripple.style.setProperty('--start-pos', `${positionX + startX}px,${positionY + startY}px`);
+    this.ripple.style.setProperty('--start-pos', `${startX}px,${startY}px`);
     this.ripple.style.setProperty('--end-pos', `${positionX}px,${positionY}px`);
 
     this.ripple.classList.add('activate');
