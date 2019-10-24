@@ -42,13 +42,12 @@ class Ripple {
     this.isAnimationEnd = false;
 
     const nodeRect = this.node.getBoundingClientRect();
-    const isUnbounded = this.node.classList.contains('pmd-ripple--unbounded');
 
     const rippleSize = Math.sqrt(Math.pow(nodeRect.width, 2) + Math.pow(nodeRect.height, 2));
     const positionX = (this.node.offsetWidth - rippleSize) / 2;
     const positionY = (this.node.offsetHeight - rippleSize) / 2;
-    const startX: number = isUnbounded ? 0 : offsetX;
-    const startY: number = isUnbounded ? 0 : offsetY;
+    const startX: number = this.isUnbounded() ? 0 : offsetX;
+    const startY: number = this.isUnbounded() ? 0 : offsetY;
 
     this.ripple.style.setProperty('--size', `${rippleSize}px`);
     this.ripple.style.setProperty('--start-pos', `${positionX + startX}px,${positionY + startY}px`);
@@ -73,6 +72,10 @@ class Ripple {
     this.isPress = true;
     this.isOver = true;
     this.activate(event.offsetX - this.node.offsetWidth / 2, event.offsetY - this.node.offsetHeight / 2);
+  }
+
+  public isUnbounded(): boolean {
+    return this.node.classList.contains('pmd-ripple--unbounded');
   }
 
   private keyboardDown(event: KeyboardEvent) {
