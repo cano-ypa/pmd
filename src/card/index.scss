@@ -9,10 +9,10 @@
   box-shadow: $pmd-elevation-dp1;
   background-color: $pmd-color-White;
   transition: box-shadow 0.1s ease;
-}
 
-.pmd-card:hover {
-  box-shadow: $pmd-elevation-dp8;
+  &:hover {
+    box-shadow: $pmd-elevation-dp8;
+  }
 }
 
 .pmd-card-primary {
