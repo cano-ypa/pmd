@@ -4,6 +4,7 @@
 %card-base {
   display: inline-flex;
   flex-direction: column;
+  box-sizing: border-box;
   min-width: 344px;
   border-radius: 4px;
   background-color: $pmd-color-White;
@@ -17,6 +18,16 @@
 
   &:hover {
     box-shadow: $pmd-elevation-dp8;
+  }
+}
+
+.pmd-card-outline {
+  @extend %card-base;
+
+  border: 1px solid $pmd-color-Gray-300;
+
+  &:hover {
+    box-shadow: $pmd-elevation-dp4;
   }
 }
 
