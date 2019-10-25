@@ -1,14 +1,19 @@
 @import '../elevation';
 @import '../color';
 
-.pmd-card {
+%card-base {
   display: inline-flex;
   flex-direction: column;
   min-width: 344px;
   border-radius: 4px;
-  box-shadow: $pmd-elevation-dp1;
   background-color: $pmd-color-White;
   transition: box-shadow 0.1s ease;
+}
+
+.pmd-card {
+  @extend %card-base;
+
+  box-shadow: $pmd-elevation-dp1;
 
   &:hover {
     box-shadow: $pmd-elevation-dp8;
