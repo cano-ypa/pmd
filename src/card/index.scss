@@ -1,4 +1,5 @@
 @import '../elevation';
+@import '../color';
 
 .pmd-card {
   display: inline-flex;
@@ -6,6 +7,7 @@
   min-width: 344px;
   border-radius: 4px;
   box-shadow: $pmd-elevation-dp1;
+  background-color: $pmd-color-White;
   transition: box-shadow 0.1s ease;
 }
 
