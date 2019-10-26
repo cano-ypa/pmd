@@ -1,0 +1,57 @@
+.h1 {
+  font-size: 96 * 0.0625rem;
+  letter-spacing: #{(-1.5 / 16)}rem;
+}
+.h2 {
+  font-size: 60 * 0.0625rem;
+  letter-spacing: #{(-0.5 / 16)}rem;
+}
+.h3 {
+  font-size: 48 * 0.0625rem;
+  letter-spacing: 0;
+}
+.h4 {
+  font-size: 34 * 0.0625rem;
+  letter-spacing: #{(0.25 / 16)}rem;
+}
+.h5 {
+  font-size: 24 * 0.0625rem;
+  letter-spacing: 0;
+}
+.h6 {
+  font-size: 20 * 0.0625rem;
+  letter-spacing: #{(0.15 / 16)}rem;
+}
+
+.subtitle1 {
+  font-size: 16 * 0.0625rem;
+  letter-spacing: #{(0.15 / 16)}rem;
+}
+.subtitle2 {
+  font-size: 14 * 0.0625rem;
+  letter-spacing: #{(0.1 / 16)}rem;
+}
+
+.body1 {
+  font-size: 16 * 0.0625rem;
+  letter-spacing: #{(0.5 / 16)}rem;
+}
+.body2 {
+  font-size: 14 * 0.0625rem;
+  letter-spacing: #{(0.25 / 16)}rem;
+}
+
+.button {
+  font-size: 14 * 0.0625rem;
+  letter-spacing: #{(1.25 / 16)}rem;
+}
+
+.caption {
+  font-size: 12 * 0.0625rem;
+  letter-spacing: #{(0.4 / 16)}rem;
+}
+
+.overline {
+  font-size: 10 * 0.0625rem;
+  letter-spacing: #{(1.5 / 16)}rem;
+}
