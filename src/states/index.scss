@@ -1,0 +1,39 @@
+@mixin pmd-states-base {
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+    pointer-events: none;
+  }
+}
+
+@mixin pmd-states-hover($color: #808080) {
+  background-color: $color;
+  opacity: 0.08;
+}
+
+@mixin pmd-states-focus($color: #808080) {
+  background-color: $color;
+  opacity: 0.24;
+}
+
+@mixin pmd-states-selected($color: #6200ee) {
+  background-color: $color;
+  opacity: 0.16;
+}
+
+@mixin pmd-states-activated($color: #6200ee) {
+  background-color: $color;
+  opacity: 0.24;
+}
+
+@mixin pmd-states-dragged($color: #808080) {
+  background-color: $color;
+  opacity: 0.16;
+}
