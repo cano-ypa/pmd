@@ -1,6 +1,10 @@
 @import '../elevation';
 
+@import '../states';
+
 %button-base {
+  @include pmd-states-base;
+
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -16,26 +20,12 @@
   outline: none;
   cursor: pointer;
 
-  &::after {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    background-color: var(--pmd-button-states-color, #000);
-    transition: opacity 0.1s ease-out;
-    pointer-events: none;
-  }
-
   &:hover:not(:disabled)::after {
-    opacity: 0.08;
+    @include pmd-states-hover(var(--pmd-button-states-color, #808080));
   }
 
   &:focus:not(:disabled)::after {
-    opacity: 0.24;
+    @include pmd-states-focus(var(--pmd-button-states-color, #808080));
   }
 
   &:disabled {
