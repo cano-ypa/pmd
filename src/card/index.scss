@@ -7,6 +7,7 @@
   box-sizing: border-box;
   min-width: 344px;
   border-radius: 4px;
+  overflow: hidden;
   background-color: $pmd-color-White;
   transition: box-shadow 0.1s ease;
 }
@@ -29,6 +30,13 @@
   &:hover {
     box-shadow: $pmd-elevation-dp4;
   }
+}
+
+.pmd-card-media {
+  width: 344px;
+  height: 194px;
+
+  background-color: $pmd-color-Gray-500;
 }
 
 .pmd-card-primary {
