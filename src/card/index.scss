@@ -39,6 +39,27 @@
   background-color: $pmd-color-Gray-500;
 }
 
+.pmd-card-thumbnail {
+  // width: 80px;
+  // height: 80px;
+
+  background-color: $pmd-color-Gray-500;
+}
+
+.pmd-card-thumbnail-mini {
+  width: 80px;
+  height: 80px;
+
+  background-color: $pmd-color-Gray-500;
+}
+
+.pmd-card-thumbnail--icon {
+  width: 40px;
+  height: 40px;
+
+  background-color: $pmd-color-Gray-500;
+}
+
 .pmd-card-primary {
   padding: 16px;
 }
