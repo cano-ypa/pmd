@@ -39,6 +39,11 @@
   background-color: $pmd-color-Gray-500; //dev
 }
 
+.pmd-card-header {
+  display: flex;
+  align-items: center;
+}
+
 .pmd-card-thumbnail {
   // width: 80px;
   // height: 80px;
