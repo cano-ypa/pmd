@@ -99,12 +99,11 @@
   width: 24px;
   height: 24px;
   padding: 12px;
-  border-right: 1px solid #e0e0e0;
   border-radius: 0;
   background-color: transparent;
 }
-.pmd-button-toggle-item:last-child {
-  border: none;
+.pmd-button-toggle-item:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
 }
 .pmd-button-toggle-item .pmd-button-icon {
   width: 24px;
