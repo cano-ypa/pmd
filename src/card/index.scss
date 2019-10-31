@@ -54,7 +54,7 @@
 .pmd-card-thumbnail-mini {
   width: 80px;
   height: 80px;
-  margin: 16px 0 16px 16px;
+  margin: 16px;
 
   background-color: $pmd-color-Gray-500; //dev
 }
@@ -62,15 +62,18 @@
 .pmd-card-thumbnail--icon {
   width: 40px;
   height: 40px;
-  margin: 16px 0 16px 16px;
+  margin: 16px;
   border-radius: 50%;
 
   background-color: $pmd-color-Gray-500; //dev
 }
 
 .pmd-card-primary {
-  padding: 16px;
+  padding: 16px 0;
   flex-grow: 1;
+}
+.pmd-card-primary:first-child {
+  margin-left: 16px;
 }
 
 .pmd-card-body {
