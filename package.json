@@ -15,7 +15,12 @@
   },
   "homepage": "https://github.com/canoypa/pedeal-material#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.1",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "@types/node": "^12.12.24",
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
     "typescript": "^3.7.4"
   }
 }
