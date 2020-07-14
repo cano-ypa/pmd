@@ -91,8 +91,8 @@ class Ripple {
       ORIGIN: "--pmr-ripple-origin",
     },
     ClassNames: {
-      ACTIVE: "pmd-ripple-active",
-      DEACTIVE: "pmd-ripple-deactive",
+      ACTIVE: "pmd-ripple-activate",
+      DEACTIVE: "pmd-ripple-deactivate",
     },
   };
 
