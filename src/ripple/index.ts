@@ -48,6 +48,7 @@ class Ripple {
    */
   active = (event: Event) => {
     const rect = this.adapter.getRect();
+    const { originX, originY } = this.getOrigin(event);
 
     const size = Math.sqrt(rect.width ** 2 + rect.height ** 2);
 
@@ -65,6 +66,12 @@ class Ripple {
   deactive = () => {
     this.adapter.removeClass(this.adapter.ClassNames.DEACTIVE);
   };
+
+  // Event からクリック位置を取得
+  getOrigin = (_event: Event) => ({
+    originX: 0,
+    originY: 0,
+  });
 
   static defaultAdapter: RippleAdapter = {
     addClass: (_: string) => undefined,
