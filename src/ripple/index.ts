@@ -12,7 +12,7 @@ class Ripple {
   private isOver: boolean = false;
 
   constructor(adapter: Partial<RippleAdapter>) {
-    this.adapter = { ...Ripple.defaultAdapter, adapter };
+    this.adapter = { ...Ripple.defaultAdapter, ...adapter };
 
     this.listener = {
       pointerDown: (event: PointerEvent) => this.pointerDown(event),
