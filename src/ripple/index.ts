@@ -4,6 +4,7 @@ import { RippleAdapter } from "./adapter";
 class Ripple {
   private adapter: RippleAdapter;
   private ripple: HTMLDivElement;
+  private node: HTMLElement = document.createElement("div");
 
   private listener: RippleEventListener;
 
